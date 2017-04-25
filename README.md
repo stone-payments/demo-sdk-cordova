@@ -1,4 +1,6 @@
-# Demo Corodva/Ionic
+# Demo Cordova/Ionic
+Esse repositório contém a demo da SDK para android, a documentação da SDK pode ser encontrada [aqui](https://stone-pagamentos.gitbooks.io/sdk-android/)
+
 
 #### LICENSE
 ```
