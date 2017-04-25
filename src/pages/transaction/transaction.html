@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Transaction
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form action="" class="form-horizontal" (submit)="getTransaction($event, inputValueAmount.value)">
+
+    <div class="form-group">
+      <label for="inputAmount" class="col-sm-2 control-label">Valor</label>
+      <div class="col-sm-10">
+        <input #inputValueAmount type="number" class="form-control" id="inputAmount" placeholder="Digite o valor">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label>
+            <input #inputDebitRadio (click)="paymentOption($event, inputDebitRadio.value)" type="radio" name="optionsRadios" id="debit" value="DEBIT"> Débito
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio">
+          <label>
+            <input #inputCreditRadio (click)="paymentOption($event, inputCreditRadio.value)" type="radio" name="optionsRadios" id="credit" value="CREDIT"> Crédito
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="showSelectOptions" class="form-group">
+      <label class="col-sm-2 control-label">Nº de Parcelas</label>
+      <div class="col-sm-10">
+        <select #InstalmentCtrl (change)="selectedValue = InstalmentCtrl.value" class="form-control">
+          <option *ngFor="let instalment of instalments" [value]="instalment.value">{{instalment.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">ENVIAR TRANSAÇÃO</button>
+      </div>
+    </div>
+  </form>
+
+</ion-content>

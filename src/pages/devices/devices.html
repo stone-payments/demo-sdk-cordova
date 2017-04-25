@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Devices</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form>
+    <div class="list-group">
+      <button *ngFor="let d of device" type="submit" class="list-group-item" (click)="onBTSubmit($event, d)">{{d}}</button>
+    </div>
+	</form>
+</ion-content>
+

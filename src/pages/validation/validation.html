@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Validation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<form class="form-horizontal" (submit)="onSubmit($event, myInput.value)">
+
+		<div class="form-group">
+	    <label class="col-sm-2 control-label" for="stoneCode">StoneCode</label>
+      <div class="col-sm-10">
+	      <input #myInput type="number" id="stoneCode" class="form-control" placeholder="Digite o número do seu StoneCode">
+      </div>
+  	</div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">ATIVAR</button>
+      </div>
+    </div>
+
+	</form>
+
+</ion-content>
+
