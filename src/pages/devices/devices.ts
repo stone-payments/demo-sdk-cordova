@@ -36,7 +36,7 @@ export class DevicesPage implements OnInit {
         console.log('Erro ao Parear!');
       }
     );
-    console.log('value: ' + value);
+    console.log('Selecionado: ' + value);
   }
 
 }

@@ -55,10 +55,12 @@ export class TransactionPage implements  OnInit {
       }
       transaction_activity.transactionActivity(
         paymentTransaction,
-        this.selectedValue,
         this.success,
         this.failure
       );
+      console.log("TransaçãoValue: " + value);
+      console.log("TransaçãoInstalment: " + this.selectedValue);
+      console.log("TransaçãoMethod: " + this.paymentMethod);
     }
   }
 
@@ -67,7 +69,7 @@ export class TransactionPage implements  OnInit {
   }
 
   failure() {
-    console.log("Error calling Hello Plugin");
+    console.log("Error calling Transaction Stone SDK Plugin");
   }
 
 }
