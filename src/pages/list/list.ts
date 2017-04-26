@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 declare var transaction_list_activity: any;
+declare var transaction_item_selected_activity: any;
 
 @Component({
 	selector: 'page-list',
@@ -30,14 +31,17 @@ export class TransactionListPage implements OnInit  {
     });
   }
 
-  // showAlert(event, value) {
-  //   transaction_list_activity.transactionSelected(() => {
-  //     console.log('Enviado com sucesso!');
-  //     console.log('value: ' + value);
-  //   }, () => {
-  //     alert("Error Sending value to Transaction List Plugin");
-  //   });
-  // }
+  send() {
+    transaction_item_selected_activity.transactionClicked(this.trasactionSelected, this.ok, this.fail);
+  }
+
+  ok() {
+    console.log('Cancelamento enviado com sucesso!');
+  }
+
+  fail(err) {
+    alert("Error Sending value to Transaction List Plugin " + err);
+  }
 
   showAlert(event, value) {
     console.log('Transação selecionada: ' + value);
@@ -50,15 +54,13 @@ export class TransactionListPage implements OnInit  {
         text: 'CANCELAR TRANSAÇÃO',
         handler: data => {
           this.trasactionSelected = 'CANCEL';
-          console.log('Selecionado: ' + this.trasactionSelected);
-          console.log('Transação cancelada');
+          this.send();
         }
       },{
         text: 'IMPRIMIR TRANSAÇÃO',
         handler: data => {
           this.trasactionSelected = 'PRINT';
-          console.log('Selecionado: ' + this.trasactionSelected);
-          console.log('Transação impressa');
+          this.send();
         }
       }]
     });
