@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 declare var transaction_list_activity: any;
 
@@ -12,7 +12,10 @@ export class TransactionListPage implements OnInit  {
 
   private list : any[] = [];
 
-  constructor(public navCtrl: NavController) {
+  private trasactionSelected: string;
+
+  constructor(public navCtrl: NavController,
+              public alertCtrl: AlertController) {
   }
 
   ngOnInit(): void {
@@ -20,12 +23,46 @@ export class TransactionListPage implements OnInit  {
     transaction_list_activity.transactionListActivity((arrayList: any) => {
       scope.list = arrayList;
       for (let i = scope.list.length - 1; i >= 0; i--) {
-        console.log('list: ' + scope.list[i]);
-        console.log('Lista exibida com sucesso!');
+        scope.list[i];
       }
     }, () => {
-      alert("Error calling Transaction List Stone SDK Plugin");
+      alert("Error calling Transaction List Plugin");
     });
+  }
+
+  // showAlert(event, value) {
+  //   transaction_list_activity.transactionSelected(() => {
+  //     console.log('Enviado com sucesso!');
+  //     console.log('value: ' + value);
+  //   }, () => {
+  //     alert("Error Sending value to Transaction List Plugin");
+  //   });
+  // }
+
+  showAlert(event, value) {
+    console.log('Transação selecionada: ' + value);
+
+    let prompt = this.alertCtrl.create({
+      title: 'Selecione uma ação',
+      subTitle: 'Informe se deseja cancelar ou imprimir a transação selecionada',
+      message: 'Transação selecionada: ' + value,
+      buttons: [{
+        text: 'CANCELAR TRANSAÇÃO',
+        handler: data => {
+          this.trasactionSelected = 'CANCEL';
+          console.log('Selecionado: ' + this.trasactionSelected);
+          console.log('Transação cancelada');
+        }
+      },{
+        text: 'IMPRIMIR TRANSAÇÃO',
+        handler: data => {
+          this.trasactionSelected = 'PRINT';
+          console.log('Selecionado: ' + this.trasactionSelected);
+          console.log('Transação impressa');
+        }
+      }]
+    });
+    prompt.present();
   }
 
 }
