@@ -13,7 +13,6 @@ export class TransactionListPage implements OnInit  {
 
   private list : any[] = [];
 
-  private trasactionSelected: string;
   private optionSelected: string;
 
   constructor(public navCtrl: NavController,
@@ -32,8 +31,9 @@ export class TransactionListPage implements OnInit  {
     });
   }
 
-  send() {
-    transaction_item_selected_activity.transactionClicked(this.optionSelected, this.ok, this.fail);
+  send(value) {
+    console.log("value received from user click: " + value);
+    transaction_item_selected_activity.transactionClicked(this.optionSelected, value, this.ok, this.fail);
   }
 
   ok() {
@@ -57,13 +57,13 @@ export class TransactionListPage implements OnInit  {
         text: 'CANCELAR TRANSAÇÃO',
         handler: data => {
           this.optionSelected = 'CANCEL';
-          this.send();
+          this.send(value);
         }
       },{
         text: 'IMPRIMIR TRANSAÇÃO',
         handler: data => {
           this.optionSelected = 'PRINT';
-          this.send();
+          this.send(value);
         }
       }]
     });

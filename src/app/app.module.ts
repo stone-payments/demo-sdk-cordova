@@ -6,7 +6,6 @@ import { MyApp } from './app.component';
 import { AppService } from './app.service';
 
 import { TransactionListPage } from '../pages/list/list';
-import { CancelTransactionPage } from '../pages/cancel/cancel';
 import { DevicesPage } from '../pages/devices/devices';
 import { TransactionPage } from '../pages/transaction/transaction';
 import { ValidationPage } from '../pages/validation/validation';
@@ -19,7 +18,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     TransactionListPage,
-    CancelTransactionPage,
     TransactionPage,
     ValidationPage,
     DevicesPage,
@@ -34,7 +32,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     TransactionListPage,
-    CancelTransactionPage,
     TransactionPage,
     ValidationPage,
     DevicesPage,
