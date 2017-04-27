@@ -14,6 +14,7 @@ export class TransactionListPage implements OnInit  {
   private list : any[] = [];
 
   private trasactionSelected: string;
+  private optionSelected: string;
 
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController) {
@@ -32,7 +33,7 @@ export class TransactionListPage implements OnInit  {
   }
 
   send() {
-    transaction_item_selected_activity.transactionClicked(this.trasactionSelected, this.ok, this.fail);
+    transaction_item_selected_activity.transactionClicked(this.optionSelected, this.ok, this.fail);
   }
 
   ok() {
@@ -46,6 +47,8 @@ export class TransactionListPage implements OnInit  {
   showAlert(event, value) {
     console.log('Transação selecionada: ' + value);
 
+
+
     let prompt = this.alertCtrl.create({
       title: 'Selecione uma ação',
       subTitle: 'Informe se deseja cancelar ou imprimir a transação selecionada',
@@ -53,13 +56,13 @@ export class TransactionListPage implements OnInit  {
       buttons: [{
         text: 'CANCELAR TRANSAÇÃO',
         handler: data => {
-          this.trasactionSelected = 'CANCEL';
+          this.optionSelected = 'CANCEL';
           this.send();
         }
       },{
         text: 'IMPRIMIR TRANSAÇÃO',
         handler: data => {
-          this.trasactionSelected = 'PRINT';
+          this.optionSelected = 'PRINT';
           this.send();
         }
       }]

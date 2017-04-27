@@ -50,8 +50,8 @@ export class TransactionPage implements  OnInit {
       var paymentTransaction : any;
       paymentTransaction = {
         amount: value,
-        method: this.selectedValue,
-        instalments: this.paymentMethod
+        method: this.paymentMethod,
+        instalments: this.selectedValue
       }
       transaction_activity.transactionActivity(
         paymentTransaction,
