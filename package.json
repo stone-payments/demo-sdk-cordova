@@ -1,7 +1,7 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "stone-demo-sdk-cordova",
+  "author": "Stone Dev Movile",
+  "homepage": "http://stone.com.br/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -39,15 +39,14 @@
     "cordova-plugin-console",
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    {
+      "locator": "https://github.com/stone-pagamentos/plugin-cordova.git"
+    }
   ],
   "cordovaPlatforms": [
     "ios",
-    {
-      "platform": "ios",
-      "version": "",
-      "locator": "ios"
-    }
+    "android"
   ],
-  "description": "stoneCordovaTest: An Ionic project"
+  "description": "stoneCordovaDemo: A Stone project"
 }
