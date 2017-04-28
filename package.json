@@ -45,7 +45,6 @@
     }
   ],
   "cordovaPlatforms": [
-    "ios",
     "android"
   ],
   "description": "stoneCordovaDemo: A Stone project"
