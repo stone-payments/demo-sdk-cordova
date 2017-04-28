@@ -43,27 +43,40 @@ Esse repositório contém uma demo de como implementar as funcionalidades da SDK
 - [Cordova](https://cordova.apache.org/#getstarted)
 - [Ionic](https://ionicframework.com)
 
-## Instalação
+## Configurações
 
 1. Abra o Terminal e clone o repositório.
 2. Dentro do repositório clonado, use o comando a seguir:
 
-    $ npm install
+        $ npm install
 
     Com isso o diretório `node_modules` será criado dentro da estrutura do projeto.
 
 3. Ainda dentro do projeto, teste se a demo foi criado com sucesso. Use o comando a seguir:
 
-    $ ionic serve
+        $ ionic serve
     
     Este comando irá abrir a demo no browser e o diretório `www` será criado no projeto.
 
-    :warning: Note que algumas funcionalidades não irão funcionar corretamente. Isso ocorre pois esse projeto foi criado exclusivamente para dispositos mobile.
+    > :warning: Note que algumas funcionalidades não irão funcionar corretamente. Isso ocorre pois esse projeto foi criado exclusivamente para dispositos mobile.
 
 4. Com o diretório `www` criado, use o comando a seguir:
 
-    $ ionic state restore
+       $ ionic state restore
     
     Este comando irá restaurar o projeto ao seu estado padrão com base no arquivo `package.json`. Com isso alguns novos diretórios e arquivos serão criados.
  
-Pronto! Agora a demo está instalado e configurado.
+    Pronto! Agora a demo está configurada.
+
+
+## Instalação
+
+1. Conecte um dispositivo mobile ao computador e use o comando a seguir:
+
+        $ ionic run
+        
+    Aguarde até que todo o carregamento seja concluido e a demo seja executada no dispositivo.
+    
+    Pronto! Agora a demo está instalada no dispositivo mobile e já pode ser testada.
+    
+    > :warning: Para dispositos Android versão 6+ será necessário habilitar as permissões manualmente.
