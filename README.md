@@ -1,7 +1,3 @@
----
-title: Stone Demo SDK Cordova
-description: Demonstration how to use Stone Mobile SDK in Cordova Plugin.
----
 <!---    
 #    license: Copyright (c) 2017 Stone Pagamentos
 #    
