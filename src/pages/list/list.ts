@@ -32,11 +32,10 @@ export class TransactionListPage implements OnInit  {
   }
 
   send(value) {
-    console.log("value received from user click: " + value);
-    transaction_item_selected_activity.transactionClicked(this.optionSelected, value, this.ok, this.fail);
+    transaction_item_selected_activity.transactionClicked(this.optionSelected, value, this.success, this.fail);
   }
 
-  ok() {
+  success() {
     console.log('Cancelamento enviado com sucesso!');
   }
 
@@ -47,8 +46,6 @@ export class TransactionListPage implements OnInit  {
   showAlert(event, value) {
     console.log('Transação selecionada: ' + value);
 
-
-
     let prompt = this.alertCtrl.create({
       title: 'Selecione uma ação',
       subTitle: 'Informe se deseja cancelar ou imprimir a transação selecionada',
@@ -57,12 +54,6 @@ export class TransactionListPage implements OnInit  {
         text: 'CANCELAR TRANSAÇÃO',
         handler: data => {
           this.optionSelected = 'CANCEL';
-          this.send(value);
-        }
-      },{
-        text: 'IMPRIMIR TRANSAÇÃO',
-        handler: data => {
-          this.optionSelected = 'PRINT';
           this.send(value);
         }
       }]
