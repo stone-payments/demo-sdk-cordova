@@ -48,7 +48,7 @@ Esse repositório contém uma demo de como implementar as funcionalidades da SDK
 
     Com isso o diretório `node_modules` será criado dentro da estrutura do projeto.
 
-3. Ainda dentro do projeto, teste se a demo foi criado com sucesso. Use o comando a seguir:
+3. Ainda dentro do projeto, teste se a demo foi criada com sucesso. Use o comando a seguir:
 
         $ ionic serve
     
@@ -62,8 +62,19 @@ Esse repositório contém uma demo de como implementar as funcionalidades da SDK
     
     Este comando irá restaurar o projeto ao seu estado padrão com base no arquivo `package.json`. Com isso alguns novos diretórios e arquivos serão criados.
  
-    Pronto! Agora a demo está configurada.
+    Estamos quase terminando, vamos para a última etapa. 
 
+5. Agora vamos editar o arquivo `SplashScreen.java`. Esse arquivo encontra-se no seguinte caminho:
+
+        plugins/cordova-plugin-splashscreen/src/android/SplashScreen.java
+    
+    Adicione o seguinte import: `import stone.application.StoneStart;`
+    
+    Ainda no mesmo arquivo, dentro do método `cordova.getActivity().runOnUiThread` que está na classe `showSplashScreen`, adicione a seguinte linha: `StoneStart.init(SplashScreen.this.cordova.getActivity());`.
+    
+    Assim, iremos garantir que toda vez que a demo seja iniciada, o StoneCode seja carregado.
+    
+    Pronto! Terminamos as configurações necessárias para iniciar a demo.
 
 ## Instalação
 
