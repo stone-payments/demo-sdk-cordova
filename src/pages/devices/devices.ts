@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-declare var devices_activity: any;
+declare var stone_sdk: any;
 
 @Component({
 	selector: 'page-device',
@@ -17,7 +17,7 @@ export class DevicesPage implements OnInit {
 
   ngOnInit(): void {
     let scope = this;
-    devices_activity.devicesActivity((arrayList: any) => {
+    stone_sdk.device((arrayList: any) => {
       scope.device = arrayList;
       for (let i = scope.device.length - 1; i >= 0; i--) {
         console.log('devices: ' + scope.device[i]);
@@ -28,7 +28,7 @@ export class DevicesPage implements OnInit {
   }
 
   onBTSubmit(event, value) {
-    devices_activity.deviceSelected(
+    stone_sdk.deviceSelected(
       value,
       function() {
         console.log('Pareado com sucesso!');

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-declare var validation_activity: any;
+declare var stone_sdk: any;
 
 @Component({
 	selector: 'page-validation',
@@ -14,7 +14,7 @@ export class ValidationPage  {
 	}
 
 	onSubmit(event, value) {
-    validation_activity.validationActivity(
+      stone_sdk.validation(
       value,
       function() {
         console.log("Dados enviados com sucesso!");

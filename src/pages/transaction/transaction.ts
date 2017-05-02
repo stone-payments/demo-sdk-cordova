@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { Instalment } from './../../app/app.model';
 import { AppService } from './../../app/app.service';
 
-declare var transaction_activity: any;
+declare var stone_sdk: any;
 
 @Component({
   selector: 'page-transaction',
@@ -47,17 +47,7 @@ export class TransactionPage implements  OnInit {
 	    console.log('Value: ' + this.selectedValue);
 	    alert('Por favor, selecione uma opção válida');
     } else {
-      var paymentTransaction : any;
-      paymentTransaction = {
-        amount: value,
-        method: this.paymentMethod,
-        instalments: this.selectedValue
-      }
-      transaction_activity.transactionActivity(
-        paymentTransaction,
-        this.success,
-        this.failure
-      );
+      stone_sdk.transaction(value, this.paymentMethod, this.selectedValue, this.success, this.failure);
       console.log("TransaçãoValue: " + value);
       console.log("TransaçãoInstalment: " + this.selectedValue);
       console.log("TransaçãoMethod: " + this.paymentMethod);
