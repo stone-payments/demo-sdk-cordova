@@ -9,7 +9,6 @@ import { TransactionListPage } from '../pages/list/list';
 import { DevicesPage } from '../pages/devices/devices';
 import { TransactionPage } from '../pages/transaction/transaction';
 import { ValidationPage } from '../pages/validation/validation';
-import { EmailPage } from '../pages/email/email';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +21,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TransactionPage,
     ValidationPage,
     DevicesPage,
-    EmailPage,
     TabsPage
   ],
   imports: [
@@ -37,7 +35,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TransactionPage,
     ValidationPage,
     DevicesPage,
-    EmailPage,
     TabsPage
   ],
   providers: [
