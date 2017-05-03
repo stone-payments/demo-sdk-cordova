@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
-declare var transaction_list_activity: any;
-declare var transaction_item_selected_activity: any;
+declare var stone_sdk: any;
 
 @Component({
 	selector: 'page-list',
@@ -13,15 +12,13 @@ export class TransactionListPage implements OnInit  {
 
   private list : any[] = [];
 
-  private optionSelected: string;
-
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController) {
   }
 
   ngOnInit(): void {
     let scope = this;
-    transaction_list_activity.transactionListActivity((arrayList: any) => {
+    stone_sdk.transactionList((arrayList: any) => {
       scope.list = arrayList;
       for (let i = scope.list.length - 1; i >= 0; i--) {
         scope.list[i];
@@ -31,8 +28,8 @@ export class TransactionListPage implements OnInit  {
     });
   }
 
-  send(value) {
-    transaction_item_selected_activity.transactionClicked(this.optionSelected, value, this.success, this.fail);
+  cancel(value) {
+    stone_sdk.transactionCancel(value, this.success, this.fail);
   }
 
   success() {
@@ -53,8 +50,7 @@ export class TransactionListPage implements OnInit  {
       buttons: [{
         text: 'CANCELAR TRANSAÇÃO',
         handler: data => {
-          this.optionSelected = 'CANCEL';
-          this.send(value);
+          this.cancel(value);
         }
       }]
     });

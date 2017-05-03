@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.stone.cordova" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.stone.cordova" version="0.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Stone Demo SDK Cordova</name>
     <description>An awesome sdk demo Ionic/Cordova app.</description>
     <author email="devmobile@stone.com.br" href="http://www.stone.com.br/">Stone Mobile Team</author>
@@ -14,10 +14,12 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="src/assets/icon/mipmap-hdpi/ic_launcher.png" density="hdpi" />
-        <icon src="src/assets/icon/mipmap-mdpi/ic_launcher.png" density="mdpi" />
-        <icon src="src/assets/icon/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
-        <icon src="src/assets/icon/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="res/android/icon/mipmap-ldpi/ic_launcher.png" density="ldpi" />
+        <icon src="res/android/icon/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="res/android/icon/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="res/android/icon/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+        <icon src="res/android/icon/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <splash src="res/android/screen/splash_logo.png" density="ldpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
