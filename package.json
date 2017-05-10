@@ -40,12 +40,12 @@
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
-    {
-      "locator": "https://github.com/stone-pagamentos/plugin-cordova.git"
-    }
+    "https://github.com/stone-pagamentos/plugin-cordova.git",
+    "cordova-plugin-android-permissions"
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ],
   "description": "stoneCordovaDemo: A Stone project"
 }
