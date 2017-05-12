@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tables</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<form class="form-horizontal">
+
+    <div class="alert alert-warning" role="alert">
+      <strong>*** Atenção! ***</strong> <br />
+      Na SDK Android o download das tabelas é feito quando o stone code é validado. <br />
+      O carregamento será feito na hora de efetuar uma transação. <br />
+      Quando houver um erro na transação por causa das tabelas, realize o download das mesmas e passe novamente a transação.
+    </div>
+
+    <!-- Download -->
+    <div class="col-md-6">
+      <div class="panel panel-success">
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-windows fa-2x"></i>Download das Tabelas</h3>
+        </div>
+
+        <div class="panel-body">
+          <ul>
+            <button type="submit" (click)="onTablesDownload()" class="btn btn-success">Download</button>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Update -->
+    <div class="col-md-6">
+      <div class="panel panel-success">
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-apple fa-2x"></i>Carregamento das Tabelas</h3>
+        </div>
+
+        <div class="panel-body">
+          <ul>
+            <button type="submit" (click)="onTablesUpdate()" class="btn btn-success">Carregar</button>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </form>
+
+</ion-content>
+

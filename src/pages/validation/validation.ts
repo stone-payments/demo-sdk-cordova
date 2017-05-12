@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 declare var stone_sdk: any;
-declare var cordova: any;
 
 @Component({
 	selector: 'page-validation',
@@ -11,22 +10,10 @@ declare var cordova: any;
 
 export class ValidationPage implements OnInit{
 
-  private permissions = cordova.plugins.permissions;
-
 	constructor(public navCtrl: NavController) {
 	}
 
 	ngOnInit(): void {
-    this.permissions.requestPermission(this.permissions.READ_EXTERNAL_STORAGE, this.permissionSuccess, this.permissionError);
-    this.permissions.requestPermission(this.permissions.READ_PHONE_STATE, this.permissionSuccess, this.permissionError);
-  }
-
-  permissionSuccess(status) {
-    console.log('Yes :D' + status);
-  }
-
-  permissionError(err) {
-    console.warn('Camera or Accounts permission is not turned on ' + err);
   }
 
 	onSubmit(event, value) {
@@ -34,12 +21,12 @@ export class ValidationPage implements OnInit{
     console.log('stoneCode: ' + value);
 	}
 
-	success() {
-    console.log("Dados enviados com sucesso!");
+	success(success) {
+    alert(success);
   }
 
   fail(err) {
-    console.log("Error Calling Validation Stone SDK Plugin " + err);
+    alert(err);
   }
 
 }

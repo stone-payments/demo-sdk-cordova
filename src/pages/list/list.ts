@@ -23,8 +23,8 @@ export class TransactionListPage implements OnInit  {
       for (let i = scope.list.length - 1; i >= 0; i--) {
         scope.list[i];
       }
-    }, () => {
-      alert("Error calling Transaction List Plugin");
+    }, (err) => {
+      alert(err);
     });
   }
 
@@ -32,12 +32,12 @@ export class TransactionListPage implements OnInit  {
     stone_sdk.transactionCancel(value, this.success, this.fail);
   }
 
-  success() {
-    console.log('Cancelamento enviado com sucesso!');
+  success(success) {
+    console.log(success);
   }
 
   fail(err) {
-    alert("Error Sending value to Transaction List Plugin " + err);
+    alert(err);
   }
 
   showAlert(event, value) {
