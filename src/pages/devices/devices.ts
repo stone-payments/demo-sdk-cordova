@@ -22,18 +22,18 @@ export class DevicesPage implements OnInit {
       for (let i = scope.device.length - 1; i >= 0; i--) {
         console.log('devices: ' + scope.device[i]);
       }
-    }, () => {
-      alert("Error calling Devices Stone SDK Plugin");
+    }, (err) => {
+      alert(err);
     });
   }
 
   onBTSubmit(event, value) {
     stone_sdk.deviceSelected(
       value,
-      function() {
-        console.log('Pareado com sucesso!');
-      }, function() {
-        console.log('Erro ao Parear!');
+      function(success) {
+        console.log(success);
+      }, function(err) {
+        console.log(err);
       }
     );
     console.log('Selecionado: ' + value);
