@@ -25,12 +25,13 @@ Esse repositório contém uma demo de como implementar as funcionalidades da SDK
 
 ## Documentação da SDK
 
-[GitBook](https://stone-pagamentos.gitbooks.io/sdk-android/)
+- [Android](https://stone-pagamentos.gitbooks.io/sdk-android/)
+- [iOS](https://github.com/stone-pagamentos/sdk-ios-v2)
 
 ## Plataformas Suportadas
 
 - Android
-- iOS (Em Breve)
+- iOS
 
 ## Pré requisitos
 
@@ -73,8 +74,10 @@ Esse repositório contém uma demo de como implementar as funcionalidades da SDK
     Ainda no mesmo arquivo, dentro do método `cordova.getActivity().runOnUiThread` que está na classe `showSplashScreen`, adicione a seguinte linha: `StoneStart.init(SplashScreen.this.cordova.getActivity());`.
     
     Assim, iremos garantir que toda vez que a demo seja iniciada, o StoneCode seja carregado.
-    
+
     Pronto! Terminamos as configurações necessárias para iniciar a demo.
+
+    > :warning: Para configurar no iOS, siga as instruções para instalação da SDK neste [link](https://github.com/stone-pagamentos/sdk-ios-v2)
 
 ## Instalação
 
