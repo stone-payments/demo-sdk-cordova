@@ -54,12 +54,12 @@ export class TransactionPage implements  OnInit {
     }
   }
 
-  success() {
-    alert('Dados enviados com sucesso!');
+  success(success) {
+    alert(success);
   }
 
-  failure() {
-    alert("Error calling Transaction Stone SDK Plugin");
+  failure(err) {
+    alert(err);
   }
 
 }
