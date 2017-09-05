@@ -103,5 +103,6 @@
     <plugin name="cordova-plugin-statusbar" spec="2.2.1" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-    <plugin name="cordova-plugin-stone-sdk" />
-    <plugin name="ionic-plugin-keyboard" />
+    <plugin name="https://github.com/stone-pagamentos/plugin-cordova.git" />
+    <plugin name="cordova-plugin-android-permissions" />
+</widget>
