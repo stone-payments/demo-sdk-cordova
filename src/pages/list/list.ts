@@ -40,9 +40,7 @@ export class TransactionListPage implements OnInit  {
     alert(err);
   }
 
-  showAlert(event, value) {
-    console.log('Transação selecionada: ' + value);
-
+  showAlert(event, value, index) {
     let prompt = this.alertCtrl.create({
       title: 'Selecione uma ação',
       subTitle: 'Informe se deseja cancelar ou imprimir a transação selecionada',
@@ -50,7 +48,7 @@ export class TransactionListPage implements OnInit  {
       buttons: [{
         text: 'CANCELAR TRANSAÇÃO',
         handler: data => {
-          this.cancel(value);
+          this.cancel(value + '_' + index);
         }
       }]
     });

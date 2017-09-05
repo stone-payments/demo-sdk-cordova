@@ -7,7 +7,7 @@
 <ion-content padding>
   <form>
     <div class="list-group">
-      <button *ngFor="let l of list" type="submit" class="list-group-item" (click)="showAlert($event, l)">{{l}}</button>
+      <button *ngFor="let l of list; let i = index" type="submit" class="list-group-item" (click)="showAlert($event, l, i)">{{l}}</button>
     </div>
   </form>
 </ion-content>
