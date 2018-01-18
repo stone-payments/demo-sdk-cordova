@@ -3,3 +3,8 @@ export class Instalment {
 	value: string;
 	name: string;
 }
+
+export class Environment {
+	id: number;
+	value: string;
+}
