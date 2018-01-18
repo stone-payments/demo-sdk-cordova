@@ -11,7 +11,7 @@ declare var stone_sdk: any;
   templateUrl: 'transaction.html'
 })
 
-export class TransactionPage implements  OnInit {
+export class TransactionPage implements OnInit {
 
   private showSelectOptions = false;
   private selectedValue: string = null;
@@ -19,33 +19,33 @@ export class TransactionPage implements  OnInit {
 
   instalments: Instalment[];
 
-	constructor(public navCtrl: NavController,
-              private appService: AppService) {
-	}
-
-	ngOnInit(): void {
-	  this.getInstalments();
+  constructor(public navCtrl: NavController,
+    private appService: AppService) {
   }
 
-	getInstalments(): void {
-	  this.appService.getIntalments().then(instalments => this.instalments = instalments);
+  ngOnInit(): void {
+    this.getInstalments();
+  }
+
+  getInstalments(): void {
+    this.appService.getIntalments().then(instalments => this.instalments = instalments);
   }
 
   paymentOption(event, value) {
-	  if(value === 'DEBIT') {
-	    this.paymentMethod = value;
+    if (value === 'DEBIT') {
+      this.paymentMethod = value;
       this.showSelectOptions = false;
-    } else if(value === 'CREDIT') {
+    } else if (value === 'CREDIT') {
       this.paymentMethod = value;
       this.showSelectOptions = true;
     }
   }
 
-	getTransaction(event, value) {
-	  if(value === '' || this.selectedValue === 'SELECT' || (this.selectedValue === null && this.paymentMethod === 'CREDIT')) {
+  getTransaction(event, value) {
+    if (value === '' || this.selectedValue === 'SELECT' || (this.selectedValue === null && this.paymentMethod === 'CREDIT')) {
       console.log('Button Method: ' + this.paymentMethod);
-	    console.log('Value: ' + this.selectedValue);
-	    alert('Por favor, selecione uma opção válida');
+      console.log('Value: ' + this.selectedValue);
+      alert('Por favor, selecione uma opção válida');
     } else {
       stone_sdk.transaction(value, this.paymentMethod, this.selectedValue, this.success, this.failure);
       console.log("TransaçãoValue: " + value);
