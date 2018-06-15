@@ -5,7 +5,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AppService } from './app.service';
 
-import { TablesPage } from '../pages/tables/tables';
 import { TransactionListPage } from '../pages/list/list';
 import { DevicesPage } from '../pages/devices/devices';
 import { TransactionPage } from '../pages/transaction/transaction';
@@ -22,7 +21,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TransactionPage,
     ValidationPage,
     DevicesPage,
-    TablesPage,
     TabsPage
   ],
   imports: [
@@ -37,7 +35,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TransactionPage,
     ValidationPage,
     DevicesPage,
-    TablesPage,
     TabsPage
   ],
   providers: [
